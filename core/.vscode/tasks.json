@@ -4,11 +4,11 @@
     {
       "type": "cppbuild",
       "label": "C/C++: g++ build active file",
-      "command": "E:/c++/mingw64/bin/g++.exe",
+      "command": "E:/mingw64/bin/g++.exe",
       "args": [
         "-fdiagnostics-color=always",
         "-g",
-        "-fexec-charset=UTF-8", // 确保输出编码为 UTF-8
+        "-fexec-charset=UTF-8",
         "${file}",
         "-o",
         "${fileDirname}/${fileBasenameNoExtension}.exe"
@@ -23,7 +23,7 @@
         "kind": "build",
         "isDefault": true
       },
-      "detail": "编译器: E:/c++/mingw64/bin/g++.exe"
+      "detail": "编译器: E:/mingw64/bin/g++.exe"
     }
   ]
 }
