@@ -4,28 +4,40 @@ using namespace std;
 class Base
 {
 public:
-	int m_A;
-protected:
-	int m_B;
-private:
-	int m_C;
+	Base()
+	{
+		m_a = 10;
+		cout << "Base Constructor" << endl;
+	}
+	~Base()
+	{
+		cout << "Base Destructor" << endl;
+	}
+
+	int m_a;
 };
 
 class Hertiage : public Base
 {
 public:
-	int m_D;
-};
+	Hertiage()
+	{
+		m_a = 100;
+		cout << "Hertiage Constructor" << endl;
+	}
+	~Hertiage()
+	{
+		cout << "Hertiage Destructor" << endl;
+	}
 
-void func()
-{
-	cout << sizeof(Hertiage) << endl;
-}
+	int m_a;
+};
 
 int main() 
 {
 	Hertiage h;
-	func();
+	cout << h.m_a << endl;
+	cout << h.Base::m_a << endl;
 	system("cls");
 	return 0;
 }
