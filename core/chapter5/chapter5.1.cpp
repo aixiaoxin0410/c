@@ -17,21 +17,42 @@ public:
 	{
 		cout << "Java,Python,C++...(公共分类列表)" << endl;
 	}
+};
 
+class Java : public BasePage
+{
+public:
 	void content()
 	{
 		cout << "JAVA学科视频" << endl;
 	}
+};
 
+class Python : public BasePage
+{
+public:
+	void content()
+	{
+		cout << "Python学科视频" << endl;
+	}
 };
 
 int main() 
 {
-	BasePage basePage;
-	basePage.header();
-	basePage.footer();
-	basePage.left();
-	basePage.content(); 
+	cout << "Java下载视频页面如下： " << endl;
+	Java java;
+	java.header();
+	java.footer();
+	java.left();
+	java.content();
+
+	cout << "Python下载视频页面如下： " << endl;
+	Python python;
+	python.header();
+	python.footer();
+	python.left();
+	python.content();
+
 	system("cls");
 	return 0;
 }
