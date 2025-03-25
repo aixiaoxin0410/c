@@ -1,61 +1,37 @@
 #include <iostream>
 using namespace std;
 
-class Person
+class BasePage
 {
 public:
+	void header()
+	{
+		cout << "首页、公开课、登录、注册...（公共头部）" << endl;
+	}
 
-	//成员函数重载+号
-	// Person operator+(Person &p)
-	// {
-	// 	Person temp;
-	// 	temp.m_a = this->m_a + p.m_a;
-	// 	temp.m_b = this->m_b + p.m_b;
-	// 	return temp;
-	// }
-	
-	int m_a;
-	int m_b;
+	void footer()
+	{
+		cout << "帮助中心、交流合作、站内地图...(公共底部)" << endl;
+	}
+	void left()
+	{
+		cout << "Java,Python,C++...(公共分类列表)" << endl;
+	}
+
+	void content()
+	{
+		cout << "JAVA学科视频" << endl;
+	}
 
 };
 
-//全局函数重载+号
-// Person operator+(Person &p1,Person &p2)
-// {
-// 	Person temp;
-// 	temp.m_a = p1.m_a + p2.m_a;
-// 	temp.m_b = p1.m_b + p2.m_b;
-// 	return temp;
-// }
-
-//运算符重载 可以发生函数重载 
-Person operator+(Person& p2, int val)  
-{
-	Person temp;
-	temp.m_a = p2.m_a + val;
-	temp.m_b = p2.m_b + val;
-	return temp;
-}
-
 int main() 
 {
-	Person p1;
-	p1.m_a = 10;
-	p1.m_b = 10;
-
-	Person p2;
-	p2.m_a = 10;
-	p2.m_b = 10;
-
-	//成员函数重载本质调用
-	//Person p3 = p1.operator+(p2);
-	//Person p3 = p1 + p2;
-
-	Person p3 = p1 + 100;
-
-	cout << p3.m_a << endl;
-	cout << p3.m_b << endl;
-
+	BasePage basePage;
+	basePage.header();
+	basePage.footer();
+	basePage.left();
+	basePage.content(); 
 	system("cls");
 	return 0;
 }
