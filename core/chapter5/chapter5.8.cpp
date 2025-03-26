@@ -4,8 +4,8 @@ using namespace std;
 class Animal
 {
 public:
-	// 虚函数
-	virtual void speak()
+	
+	virtual void speak() // 虚函数
 	{
 		cout << "动物在说话" << endl;
 	}
