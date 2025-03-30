@@ -35,14 +35,14 @@ using namespace std;
 // - 按照编号排序：按照职工编号，进行排序，排序规则由用户指定
 // - 清空所有文档：清空文件中记录的所有职工信息 （清空前需要再次确认，防止误删）
 
-//测试函数
-void test()
-{
-    Employ *employ = new Employ(1, "张三", 1);
-    employ->ShowInfo();
-    delete employ;
+// 测试函数
+// void test()
+// {
+//     Employ *employ = new Employ(1, "张三", 1);
+//     employ->ShowInfo();
+//     delete employ;
     
-}
+// }
 
 
 int main() 
@@ -62,12 +62,16 @@ int main()
                 wm.ExitSystem();
                 break;
             case 1:
+                wm.AddEmp();
                 break;
             case 2:
+                wm.Show_Emp();
                 break;
             case 3:
+                wm.Del_Emp();
                 break;
             case 4:
+                wm.Mod_Emp();
                 break;
             case 5:
                 break;
