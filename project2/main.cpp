@@ -74,10 +74,13 @@ int main()
                 wm.Mod_Emp();
                 break;
             case 5:
+                wm.Find_Emp();
                 break;
             case 6:
+                wm.Sort_Emp();
                 break;
             case 7:
+                wm.Clean_File();
                 break;
             default:
                 cout << "输入有误，请重新输入" << endl;
