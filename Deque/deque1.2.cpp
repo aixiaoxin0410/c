@@ -26,7 +26,6 @@ void test01()
 
 int main()
 {
-    // test01();
     test01(); 
     system("cls");
     return 0;
