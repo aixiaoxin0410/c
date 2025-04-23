@@ -39,7 +39,12 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp",
-    "ctime": "cpp"
+    "ctime": "cpp",
+    "list": "cpp",
+    "functional": "cpp",
+    "iterator": "cpp",
+    "map": "cpp",
+    "set": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "E:/mingw64/bin/g++.exe",
   "C_Cpp_Runner.cppCompilerPath": "E:/mingw64/bin/g++.exe",
