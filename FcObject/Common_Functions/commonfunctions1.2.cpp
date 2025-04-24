@@ -3,21 +3,19 @@ using namespace std;
 #include<algorithm>
 #include<vector>
 
-void Print01(int val)
+void PrintV(int val)
 {
 	cout << val << " ";
 }
 
-//函数对象
-class Print02 
+class v_transform
 {
- public:
-	void operator()(int val) 
+public:
+	int operator()(int v)
 	{
-		cout << val << " ";
+		return v+100;
 	}
 };
-
 
 void test01()
 {
@@ -26,9 +24,11 @@ void test01()
 	{
 		v.push_back(i);
 	}
-	for_each(v.begin(),v.end(),Print01);
-	cout << endl;
-	for_each(v.begin(),v.end(),Print02());
+
+	vector<int>vTarget;
+	vTarget.resize(v.size());
+	transform(v.begin(),v.end(),vTarget.begin(),v_transform());
+	for_each(vTarget.begin(),vTarget.end(),PrintV);
 }
 
 int main() 
