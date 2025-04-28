@@ -1,0 +1,4 @@
+1.创建演讲者speechmanager管理类，对应.h和.cpp文件.
+2.在speechmanager管理类中创建菜单功能(show_menu).主函数(main)测试是否能用sw.show_menu
+3.完善退出功能（exitSystem) ，switch语句（1：开始比赛  2：查看记录  3：清空记录  0：退出系统）四个功能
+4.创建演讲者speaker类，定义string姓名，double[2]分数
