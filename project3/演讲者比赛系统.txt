@@ -2,3 +2,28 @@
 2.在speechmanager管理类中创建菜单功能(show_menu).主函数(main)测试是否能用sw.show_menu
 3.完善退出功能（exitSystem) ，switch语句（1：开始比赛  2：查看记录  3：清空记录  0：退出系统）四个功能
 4.创建演讲者speaker类，定义string姓名，double[2]分数
+5.在speechmanager.h类中创建三个vector容器（分别存放第一轮12人，第二轮6人，胜利3人）、map容器存放具体选手信息（分数、选手）、还有记录比赛轮数的变量m_Index
+6.在speechmanager.h中增加成员函数initSpeech初始化5.的属性，并放在构造函数里面。
+7.在speechmanager.h创建createSpeaker成员函数，在构造函数中调用。完成后在main主函数测试一下
+8.在speechManager.h中提供开始比赛的的成员函数startSpeech();
+结构如下：
+{
+	//第一轮比赛
+	//1、抽签
+	speechDraw()
+
+	用if语句判断一二轮
+	random_shuffle打乱排序
+
+	//2、比赛
+
+	关键点：
+	speechContest()
+
+	//3、显示晋级结果
+	//第二轮比赛
+	//1、抽签
+	//2、比赛
+	//3、显示最终结果
+	//4、保存分数
+}

@@ -11,11 +11,13 @@ int main()
     while(true)
     {
         sm.ShowMenu();
+        // sm.test();
         cout << "请输入选择：" << endl;
         cin >> choice;
         switch (choice)
         {
             case 1: //开始比赛
+                sm.StartSpeech();
                 break;
             case 2: //查看记录
                 break;
