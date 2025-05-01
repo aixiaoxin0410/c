@@ -1,9 +1,11 @@
 #include <iostream>
 using namespace std;
 #include "SpeechManager.h"
+#include<ctime>
 
 int main() 
 {
+    srand((unsigned int)time(NULL));
     system("chcp 65001 > nul");
     SpeechManager sm;
 
@@ -20,8 +22,10 @@ int main()
                 sm.StartSpeech();
                 break;
             case 2: //查看记录
+                sm.ShowRecord();
                 break;
             case 3: //清空记录
+                sm.ClearRecord();
                 break;
             case 0: //退出系统
                 sm.ExitSystem();
