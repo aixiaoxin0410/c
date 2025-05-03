@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 #include<ctime>
-#inclu5.2de<fstream>
+#include<fstream>
 #include "Identity.h"
 #include "GlobalFile.h"
 #include "Student.h"
@@ -20,22 +20,23 @@ void ManagerMenu(Identity * &manager)
 
         if(select == 1)
         {
-            cout << "添加账号" << endl;
+            man->AddPerson();
         }
         else if(select == 2)
         {
-            cout << "查看账号" << endl;
+            man->ShowPerson();
         }
         else if(select == 3)
         {
-            cout << "查看机房" << endl;
+            man->ShowComputer();
         }
         else if(select == 4)
         {
-            cout << "清空预约" << endl;
+            man->CleanFile();
         }
         else if(select == 0)
         {
+            delete manager;
 			cout << "注销成功" << endl;
 			system("pause");
 			system("cls");
@@ -50,6 +51,51 @@ void ManagerMenu(Identity * &manager)
        
     }
 }
+
+void StudentMenu(Identity * &student)
+{
+    while(true)
+    {
+        student->OpenMenu(); 
+        Student* stu = (Student*)student;
+
+        int select = 0;
+        cin >> select;
+
+        if(select == 1)
+        {
+            stu->ApplyOrder();
+        }
+        else if(select == 2)
+        {
+            stu->ShowMyOrder();
+        }
+        else if(select == 3)
+        {
+            stu->ShowAllOrder();
+        }
+        else if(select == 4)
+        {
+            stu->CancelOrder();
+        }
+        else if(select == 0)
+        {
+            delete student;
+			cout << "注销成功" << endl;
+			system("pause");
+			system("cls");
+			return;
+        }
+        else
+        {
+            cout << "输入有误，请重新输入！" << endl;
+            system("pause");
+            system("cls");
+        }
+       
+    }
+}
+
 
 void LoginIn(string filename, int type)
 {
@@ -99,9 +145,7 @@ void LoginIn(string filename, int type)
 				system("cls");
 
                 person = new Student(id, name, pwd);
-
-
-
+                StudentMenu(person);
                 return;
             }
         }
@@ -144,9 +188,7 @@ void LoginIn(string filename, int type)
 				system("cls");
 
                 person = new Manager(name, pwd);
-
-                ManagerMenu(person);    
-                
+                ManagerMenu(person);         
                 return;
             }
         }
