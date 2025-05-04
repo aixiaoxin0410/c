@@ -33,6 +33,8 @@ public:
     // 学生学号
     int S_id;
 
+    bool hasRecord = false;
+
     //机房容器
 	vector<ComputerRoom> vCom;
 };

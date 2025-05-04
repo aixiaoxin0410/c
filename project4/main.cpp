@@ -96,6 +96,40 @@ void StudentMenu(Identity * &student)
     }
 }
 
+void TeacherMenu(Identity * &teacher)
+{
+    while(true)
+    {
+        teacher->OpenMenu(); 
+        Teacher* tea = (Teacher*)teacher;
+
+        int select = 0;
+        cin >> select;
+
+        if(select == 1)
+        {
+            tea->ShowAllOrder();
+        }
+        else if(select == 2)
+        {
+            tea->ValidOrder();
+        }
+        else if(select == 0)
+        {
+            delete teacher;
+			cout << "注销成功" << endl;
+			system("pause");
+			system("cls");
+			return;
+        }
+        else
+        {
+            cout << "输入有误，请重新输入！" << endl;
+            system("pause");
+            system("cls");
+        }    
+    }
+}
 
 void LoginIn(string filename, int type)
 {
@@ -166,9 +200,7 @@ void LoginIn(string filename, int type)
 				system("cls");
 
                 person = new Teacher(id, name, pwd);
-
-
-                
+                TeacherMenu(person);   
                 return;
             }
         }
@@ -223,7 +255,7 @@ int main()
         cout << "\t\t|          0.退    出           |\n";
         cout << "\t\t|                               |\n";
         cout << "\t\t -------------------------------\n";
-        cout << "输入您的选择: ";   
+        cout << "输入您的选择: " << endl;   
         
         cin >> select;
         switch (select)
